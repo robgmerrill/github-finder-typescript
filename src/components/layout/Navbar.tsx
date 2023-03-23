@@ -12,7 +12,7 @@ function Navbar({title}: {title: string}) {
             </div>
             <div className='flex space-x-4'>
                 <Link to='/' className="btn btn-ghost rounded-btn">Home</Link>
-                <Link to='/about'>About</Link>
+                <Link className="btn btn-ghost rounded-btn" to='/about'>About</Link>
             </div>
         </div>
     </nav>
