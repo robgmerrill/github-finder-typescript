@@ -1,10 +1,16 @@
 import React from 'react'
+import UserResults from '../components/layout/users/UserResults'
+import { useEffect, useState } from 'react'
 
 function Home() {
+
+   
+
   return (
-    <div>
-      <h1 className='text-6xl'>Welcome</h1>
-    </div>
+    <>
+      {/* Search component goes here */}
+      <UserResults />
+    </>
   )
 }
 
