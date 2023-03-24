@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 
 interface User {
     login: string;
+    id: number;
     // add any other properties of the user object here
   }
 
@@ -36,7 +37,7 @@ function UserResults() {
       {Array.isArray(users) && users.map(user => {
         console.log("USER", user.login);
         return (
-            <div>hi</div>
+            <div key={user.id}>hi</div>
         )
       })}
     </div>
