@@ -1,11 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-
-interface User {
-    login: string;
-    id: number;
-    // add any other properties of the user object here
-  }
+import UserItem from './UserItem';
+import { User } from '../../../types';
 
 function UserResults() {
     const [users, setUsers] = useState<User[] | null>(null)
@@ -15,11 +11,7 @@ function UserResults() {
   useEffect(() => {
  
     const getData = async() => {
-        const res = await fetch(`${process.env.REACT_APP_GITHUB_URL}users`, {
-            headers: {
-                Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`
-            } 
-        })
+        const res = await fetch(`${process.env.REACT_APP_GITHUB_URL}users`)
         const data = await res.json();
         setUsers(data)
         setLoading(false)
@@ -37,7 +29,7 @@ function UserResults() {
       {Array.isArray(users) && users.map(user => {
         console.log("USER", user.login);
         return (
-            <div key={user.id}>hi</div>
+            <UserItem key={user.id} user={user} />
         )
       })}
     </div>

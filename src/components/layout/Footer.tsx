@@ -3,7 +3,6 @@ import React from 'react'
 function Footer() {
 
   const footerDate = new Date().getFullYear();
-  console.log(footerDate)
 
   return (
     <footer className='footer footer-center bg-gray-700 p-10'>
